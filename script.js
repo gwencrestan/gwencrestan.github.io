@@ -1,31 +1,41 @@
 const pages = document.querySelectorAll('.page')
 const links = document.querySelectorAll('header nav a')
 
-const observer = new IntersectionObserver((entries) => {
-    let mostVisible = null
-    let maxRatio = 0
+function setActiveLink() {
+    let closestPage = null
+    let closestDistance = Infinity
 
-    entries.forEach(entry => {
-        if (entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio
-            mostVisible = entry.target
+    const viewportCenter = window.innerHeight / 2
+
+    pages.forEach(page => {
+        const rect = page.getBoundingClientRect()
+        const pageCenter = rect.top + rect.height / 2
+        const distance = Math.abs(pageCenter - viewportCenter)
+
+        if (distance < closestDistance) {
+            closestDistance = distance
+            closestPage = page
         }
     })
 
-    if (mostVisible) {
-        // Remove active from all
+    if (closestPage) {
         links.forEach(link => link.classList.remove('active'))
-
-        // Add active to the matching link
-        const link = document.querySelector(`header nav a[href*="${mostVisible.id}"]`)
+        const link = document.querySelector(`header nav a[href*="${closestPage.id}"]`)
         if (link) link.classList.add('active')
     }
-}, {
-    threshold: Array.from({ length: 101 }, (_, i) => i / 100)  // from 0 to 1 in 0.01 steps
+}
+
+window.addEventListener('scroll', () => {
+    requestAnimationFrame(setActiveLink)
 })
 
-// Observe each section
-pages.forEach(page => observer.observe(page))
+window.addEventListener('resize', () => {
+    requestAnimationFrame(setActiveLink)
+})
+
+// Initial run
+setActiveLink()
+
 
 
 

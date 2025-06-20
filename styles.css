@@ -24,9 +24,9 @@ header {
 }
 
 nav {
-  display: inline-flexbox;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 3%;
   margin: 0 auto;
   padding: 1%;
@@ -53,6 +53,8 @@ select option {
   border-style: none;
   color: #FEFCFB;
   background-color: #004766;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
 }
 
 select {
@@ -71,6 +73,33 @@ select:focus {
 
 .page {
   height: 100%;
-  background-color: blue;
+  background-color: #FEFCFB;
   border: 2px solid black;
+  color: #004766;
+  align-content: center;
+  text-align: justify;
+  padding-left: 5%;
+  padding-right: 5%;
+  gap: 1%;
+}
+
+h1 {
+  font-size: 8vmin;
+  font-weight: 800;
+}
+
+p {
+  font-size: 3.5vmin;
+  font-weight: 700;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 3.5vmin;
+  font-weight: 900;
+  color: #006c9a;
+}
+
+.link:hover {
+  color: #004766;
 }
