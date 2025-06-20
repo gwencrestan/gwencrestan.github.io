@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
-  <!-- <noscript>
+<!-- <body>
+  <noscript>
     <style type="text/css">
       .pagecontainer {
         display: none;
@@ -19,7 +19,7 @@
     <div class="noscriptmsg">
       You don't have javascript enabled. Good luck with that.
     </div>
-  </noscript> -->
+  </noscript>
 
   <header>
     <nav>
@@ -86,6 +86,36 @@
           target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
     </div>
   </section>
+
+  <script src="script.js">
+  </script>
+</body> -->
+
+<body>
+
+  <header>
+    <nav>
+      <a href="#about" class="active"> About </a>
+      <a href="#skills"> Skills </a>
+      <a href="#education"> Education </a>
+      <a href="#projects"> Projects </a>
+      <a href="#contact"> Contact </a>
+
+      <select onchange="langChange()" id="lang_toggle">
+        <option value="en" selected>EN</option>
+        <option value="de">DE</option>
+        <option value="fr">FR</option>
+      </select>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page" id="about"></div>
+    <div class="page" id="skills"></div>
+    <div class="page" id="education"></div>
+    <div class="page" id="projects"></div>
+    <div class="page" id="contact"></div>
+  </div>
 
   <script src="script.js">
   </script>
