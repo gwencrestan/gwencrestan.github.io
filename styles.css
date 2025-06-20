@@ -103,3 +103,38 @@ p {
 .link:hover {
   color: #004766;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 20px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #0a709c;
+  border-radius: 15px;
+  padding: 4%;
+  text-align: left;
+  transition: transform .2s;
+}
+
+.grid-item:hover {
+  transform: scale(1.1);
+}
+
+.grid-item:nth-child(odd) {
+  background-color: #015d85;
+}
+
+b {
+  font-size: calc(10px + 2vmin);
+  color: #FEFCFB;
+  padding-bottom: 2%;
+}
+
+i {
+  font-size: calc(8px + 1.5vmin);
+  color: #FEFCFB;
+}
