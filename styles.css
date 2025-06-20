@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  scroll-behavior: smooth;
   font-family: 'Geist Mono', sans-serif;
 }
 
@@ -21,15 +24,16 @@ header {
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: inline-flexbox;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 3%;
   margin: 0 auto;
   padding: 1%;
 }
 
 nav a {
-  font-size: 3vmin;
+  font-size: calc(12px + 2vmin);
   color: #FEFCFB;
   text-decoration: none;
   font-weight: 700;
@@ -44,13 +48,11 @@ select:hover {
 
 select,
 select option {
-  font-size: 3vmin;
+  font-size: calc(12px + 2vmin);
   font-weight: 700;
   border-style: none;
   color: #FEFCFB;
   background-color: #004766;
-  padding-left: 1%;
-  padding-right: 1%;
 }
 
 select {
