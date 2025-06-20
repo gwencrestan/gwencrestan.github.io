@@ -66,12 +66,13 @@ section {
   padding-top: 60px;
 }
 
-div {
+.page-container {
   align-content: center;
   text-align: justify;
   width: 100%;
   height: 100%;
   padding: 50px;
+  overflow: hidden;
 }
 
 h1 {
@@ -95,4 +96,18 @@ p {
 
 .link:hover {
   color: #004766;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+}
+
+.grid-item {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
 }
